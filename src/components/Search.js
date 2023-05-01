@@ -7,7 +7,7 @@ const Search = () => {
                <input type='text' placeholder='find a user' />
            </div>
             <div className='userChat'>
-                <img src={samarInput} alt='no image' />
+                <img src={samarInput}  />
                 <div className='userChatInfo'>
                     <span>Samar</span>
                 </div>

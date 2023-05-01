@@ -5,12 +5,12 @@ const Massege = () => {
     return (
         <div className='massege owner'>
             <div className='messageInfo'>
-                <img src={samarImage} alt='...' />
+                <img src={samarImage}   />
                 <span>Just Now</span>
             </div>
             <div className='messageContent'>
                 <p>hello</p>
-                <img src={jacket} alt='...' />
+                <img src={jacket}   />
             </div>
         </div>
     )
