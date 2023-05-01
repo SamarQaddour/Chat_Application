@@ -10,9 +10,9 @@ const Chat = () => {
          <div className='chatInfo'>
              <span>Samar</span>
              <div className='chatIcons'>
-                 <img src={Add}  />
-                 <img src={More}  />
-                 <img src={Cam}  />
+                 <img src={Add}  alt=''  />
+                 <img src={More}  alt=''   />
+                 <img src={Cam}  alt=''   />
              </div>
          </div>
             <Masseges/>
