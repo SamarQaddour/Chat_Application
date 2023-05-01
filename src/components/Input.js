@@ -1,6 +1,7 @@
 import React from 'react'
 import Img from '../img/img.png'
 import attach from '../img/attach.png'
+import {} from ''
 const Input = () => {
     return (
         <div className='input'>
