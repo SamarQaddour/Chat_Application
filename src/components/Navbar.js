@@ -7,11 +7,11 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <span className='logo'>private chat</span>
-              <div className='user'>
-                  <img src={currentUser.photoURL} alt='' />
-                  <span>{currentUser.displayName}</span>
-                  <button onClick={()=>signOut(auth)}>logout</button>
-              </div>
+            <div className='user'>
+                <img src={currentUser?.photoURL} alt='' />
+                <span>{currentUser?.displayName}</span>
+                <button onClick={()=>signOut(auth)}>logout</button>
+            </div>
 
         </div>
     )

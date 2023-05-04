@@ -1,33 +1,29 @@
-import { doc, onSnapshot } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { ChatContext } from "../context/ChatContext";
+import React,{useState,useEffect,useContext} from "react";
+import {onSnapshot,doc} from "firebase/firestore";
 import { db } from "../firebase";
-
+import { AuthContext } from "../context/AuthContext";
+import {ChatContext} from "../context/ChatContext";
 const Chats = () => {
-    const [chats, setChats] = useState([]);
-
-    const { currentUser } = useContext(AuthContext);
-    const { dispatch } = useContext(ChatContext);
-
-    useEffect(() => {
-        const getChats = () => {
-            const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-                setChats(doc.data());
-            });
-
-            return () => {
-                unsub();
-            };
-        };
-
-        currentUser.uid && getChats();
-    }, [currentUser.uid]);
-
-    const handleSelect = (u) => {
-        dispatch({ type: "CHANGE_USER", payload: u });
-    };
-
+    const [chats,setChats] = useState([])
+    const {currentUser} = useContext(AuthContext)
+    const {dispatch} =useContext(ChatContext)
+    useEffect(()=>{
+        //get real time
+       const getChats = () =>{
+           const unsub = onSnapshot(doc(db,"userChats",currentUser.uid),(doc)=>{
+               setChats(doc.data())
+           })
+           return () => {
+               unsub();
+           }
+       }
+        currentUser?.uid && getChats()
+    },[currentUser?.uid])
+    //update user
+    const handleSelect = (u) =>{
+        dispatch({type:"CHANGE_USER",payload: u})
+    }
+    console.log(Object.entries(chats,"chats"))
     return (
         <div className="chats">
             {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
@@ -44,7 +40,7 @@ const Chats = () => {
                 </div>
             ))}
         </div>
-    );
-};
+    )
+}
 
 export default Chats;
