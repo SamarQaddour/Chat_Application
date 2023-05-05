@@ -17,7 +17,7 @@ const Masseges = () => {
     },[data.chatId])
     console.log(messages,"messages")
     return (
-        <div className='masseges'>
+        <div className='messages'>
             {messages.map(m=>(
                 <Massege message={m} />
             ))}
