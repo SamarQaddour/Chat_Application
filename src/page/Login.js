@@ -31,7 +31,7 @@ const Login = () => {
                     <button>Login</button>
                     {err && <span style={{color: 'red'}}>Some error occur</span>}
                 </form>
-                <p>you do have an account? <Link to='/Register'>Register</Link></p>
+                <p>you don't have an account? <Link to='/Register'>Register</Link></p>
             </div>
         </div>
     )
